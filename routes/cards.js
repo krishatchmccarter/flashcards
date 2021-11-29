@@ -10,11 +10,7 @@ router.get("/:id", (req, res) => {
 	const { hint } = cards[id];
 
 	const { templateData } = { text, hint };
-
-	res.render("card", {
-		prompt: cards[req.params.id].question,
-		hint: cards[req.params.id].hint, //using id in params because that's what we called it in url
-	});
+	res.render("card", templateData);
 });
 
 module.exports = router;
